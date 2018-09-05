@@ -1,4 +1,3 @@
-# pdns-auth-mysq
 # Dockerfile is PowerDNS Authoritative Nameserver
 
 Docker Image Create.
@@ -8,7 +7,9 @@ Generic MySQL backend
 
 ## config
 
-''':pdns.conf
+pdns.conf
+
+```conf:pdns.conf
 launch=gmysql
 gmysql-host=mysql
 gmysql-port=3306
@@ -16,11 +17,13 @@ gmysql-dbname=pdns
 gmysql-user=root
 gmysql-password=password
 gmysql-dnssec=no
-'''
+```
 
 ## Docker-compose
 
-''':docker-compose.yml
+docker-compose.yml
+
+```yml:docker-compose.yml
 version: "3.3"
 
 services:
@@ -52,5 +55,5 @@ services:
       - mysql
     volumes:
       - ./pdns.conf:/etc/pdns/pdns.conf
-'''
+```
 
